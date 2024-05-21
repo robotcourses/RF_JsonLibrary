@@ -13,8 +13,6 @@ Post JSONPlaceholder
     ...  ${nota_avaliacao}=${None}
     ...  ${usuario_avaliacao}=${None}
     ...  ${descricao}=${None}
-    [Return]
-    ...  ${response.json()}
     
     ${alias}  JSONPlaceholder Session
     ${json}  Request Body  ${nome_produto}  ${preco_produto}  ${usuario_avaliacao}  ${nota_avaliacao}  ${descricao}
@@ -24,7 +22,9 @@ Post JSONPlaceholder
     ...  url=/users
     ...  json=${json}
 
-        Log To Console    ${\n}${response.json()}
+    Log To Console    ${\n}${response.json()}
+
+    RETURN  ${response.json()}
 
 Request Body
     [Documentation]  Construirá o body da requisição conforme argumentos passados pelos cenários de teste
@@ -34,8 +34,6 @@ Request Body
     ...  ${usuario_avaliacao}
     ...  ${nota_avaliacao}
     ...  ${descricao}
-    [Return]
-    ...  ${json}
     
     ${json}  Load Json From File    
     ...    file_name=${CURDIR}${/}json${/}json_example.json
@@ -73,7 +71,7 @@ Request Body
     ${avaliacoes}  Load Json From File    
     ...    file_name=${CURDIR}${/}json${/}avaliacoes.json
 
-    FOR    ${usuario}    ${nota}    IN ZIP    ${usuario_avaliacao}    ${nota_avaliacao}
+    FOR    ${usuario}    ${nota}    IN ZIP    ${usuario_avaliacao}    ${nota_avaliacao}   mode=SHORTEST
         ${avaliacoes}  Update Value To Json    
         ...    json_object=${avaliacoes}
         ...    json_path=$.usuario
@@ -91,3 +89,5 @@ Request Body
     ...    json_object=${json}
     ...    json_path=$.avaliacoes
     ...    new_value=${list_avaliacoes}
+
+    RETURN  ${json}

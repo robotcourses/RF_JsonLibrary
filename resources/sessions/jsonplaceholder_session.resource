@@ -3,8 +3,6 @@ Library  RequestsLibrary
 
 *** Keywords ***
 JSONPlaceholder Session
-    [Return]
-    ...  ${alias}
 
     ${alias}  Set Variable  JSONPlaceholder
 
@@ -13,3 +11,5 @@ JSONPlaceholder Session
     ...  url=https://jsonplaceholder.typicode.com/
     ...  verify=${False}
     ...  disable_warnings=${True}
+    
+    RETURN  ${alias}
