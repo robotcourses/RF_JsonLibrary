@@ -2,7 +2,7 @@
 name = "rf-jsonlibrary"
 version = "0.1.0"
 description = "EXPLORANDO A JSON LIBRARY COM ROBOT FRAMEWORK"
-authors = ["Your Name <you@example.com>"]
+authors = ["Vinicius Trindade <vinicius.v.trindade@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
