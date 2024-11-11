@@ -1,8 +1,5 @@
 *** Settings ***
-Library    RequestsLibrary
-Library    JSONLibrary
-Library    Collections
-Resource    ../sessions/jsonplaceholder_session.resource
+Resource    ../../base.resource
 
 *** Keywords ***
 Post JSONPlaceholder
@@ -91,3 +88,10 @@ Request Body
     ...    new_value=${list_avaliacoes}
 
     RETURN  ${json}
+
+Assert Post JSONPlaceholder
+    [Documentation]
+    [Arguments]  ${response_json}
+    
+
+    Validate Json By Schema File    ${response_json}    ${CURDIR}${/}json${/}jsonschema_example.json

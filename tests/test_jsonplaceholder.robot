@@ -1,11 +1,10 @@
 *** Settings ***
-Resource    ../Resources/services/post_jsonplanceholder.resource
-Resource    ../Resources/services/get_jsonplanceholder.resource
+Resource   ../base.resource
 
 *** Test Cases ***
 T1 - Post Placeholder
 
-    ${usuarios}  Create List  Miguel  Erika  Vinicius
+    ${usuarios}  Create List  Igor Jesus  Almada  Luiz Henrique
     ${notas}  Create List  5  4  3
 
     ${response}  Post JSONPlaceholder    
@@ -14,41 +13,46 @@ T1 - Post Placeholder
     ...    usuario_avaliacao=${usuarios}
     ...    nota_avaliacao=${notas}
 
+    Assert Post JSONPlaceholder    ${response}
     
-
 T2 - Post Placeholder com Descrição
 
-    ${usuarios}  Create List  Eloa  Aurora  Renan
+    ${usuarios}  Create List  Marlon Freitas  Gregory  Savarino
     ${notas}  Create List  5  4  3  2
     ${descricao}  Create Dictionary  decricao=Geladeira Samsung 220v
 
-    Post JSONPlaceholder    
+    ${response}  Post JSONPlaceholder    
     ...    nome_produto=Geladeira
     ...    preco_produto=7990.99
     ...    usuario_avaliacao=${usuarios}
     ...    nota_avaliacao=${notas}
     ...    descricao=${descricao}
 
+    Assert Post JSONPlaceholder    ${response}
+
+
 T3 - Post Placeholder sem o Nome do Produto
 
-    ${usuarios}  Create List  Julia  Vitoria
+    ${usuarios}  Create List  Alexander Barboza  Bastos
     ${notas}  Create List  3  2
 
-    Post JSONPlaceholder    
+    ${response}  Post JSONPlaceholder    
     ...    preco_produto=25990
     ...    usuario_avaliacao=${usuarios}
     ...    nota_avaliacao=${notas}
 
+    Assert Post JSONPlaceholder    ${response}
+
 T4 - Post Placeholder sem o Preço do Produto
 
-    ${usuarios}  Create List  Paulo  Neia
+    ${usuarios}  Create List  John  Alex Telles  Vitinho
     ${notas}  Create List  5  4
     ${descricao}  Create Dictionary  decricao=Geladeira Samsung 220v
 
-    Post JSONPlaceholder    
+    ${response}  Post JSONPlaceholder    
     ...    nome_produto=Microondas
     ...    usuario_avaliacao=${usuarios}
     ...    nota_avaliacao=${notas}
     ...    descricao=${descricao}
 
-
+    Assert Post JSONPlaceholder    ${response}

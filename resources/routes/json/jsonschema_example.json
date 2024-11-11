@@ -6,7 +6,7 @@
             "type": "string"
         },
         "preco": {
-            "type": "integer"
+            "type": "string"
         },
         "avaliacoes": {
             "type": "array",
@@ -18,7 +18,7 @@
                             "type": "string"
                         },
                         "nota": {
-                            "type": "integer"
+                            "type": "string"
                         }
                     },
                     "required": [
@@ -33,7 +33,7 @@
                             "type": "string"
                         },
                         "nota": {
-                            "type": "integer"
+                            "type": "string"
                         }
                     },
                     "required": [
