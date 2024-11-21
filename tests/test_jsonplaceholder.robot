@@ -18,7 +18,7 @@ T1 - Post Placeholder
 T2 - Post Placeholder com Descrição
 
     ${usuarios}  Create List  Marlon Freitas  Gregory  Savarino
-    ${notas}  Create List  5  4  3  2
+    ${notas}  Create List  5  4  3
     ${descricao}  Create Dictionary  descricao=Geladeira Samsung 220v
 
     ${response}  Post JSONPlaceholder    
@@ -37,7 +37,7 @@ T3 - Post Placeholder sem o Nome do Produto
     ${notas}  Create List  3  2
 
     ${response}  Post JSONPlaceholder    
-    ...    preco_produto=25990
+    ...    preco_produto=259.00
     ...    usuario_avaliacao=${usuarios}
     ...    nota_avaliacao=${notas}
 

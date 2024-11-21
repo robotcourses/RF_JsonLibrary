@@ -32,21 +32,6 @@
                         "usuario",
                         "nota"
                     ]
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "usuario": {
-                            "type": "string"
-                        },
-                        "nota": {
-                            "type": "string"
-                        }
-                    },
-                    "required": [
-                        "usuario",
-                        "nota"
-                    ]
                 }
             ]
         }
