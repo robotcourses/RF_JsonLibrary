@@ -2,11 +2,18 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "properties": {
+        "id": {
+            "type": "integer"
+        },
         "nome": {
             "type": "string"
         },
-        "preco": {
+        "descricao": {
             "type": "string"
+        },
+        "preco": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d{2}$"
         },
         "avaliacoes": {
             "type": "array",
@@ -48,5 +55,6 @@
         "nome",
         "preco",
         "avaliacoes"
-    ]
+    ],
+    "additionalProperties": false
 }

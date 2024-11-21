@@ -90,8 +90,7 @@ Request Body
     RETURN  ${json}
 
 Assert Post JSONPlaceholder
-    [Documentation]
+    [Documentation]  Essa keyword realizará a validação de estrutura e dados do response do JSON Placerholder
     [Arguments]  ${response_json}
-    
 
-    Validate Json By Schema File    ${response_json}    ${CURDIR}${/}json${/}jsonschema_example.json
+    Validate Json By Schema File    ${response_json}    ${CURDIR}${/}schemas${/}jsonschema_post_jsonplaceholder.json

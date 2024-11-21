@@ -19,7 +19,7 @@ T2 - Post Placeholder com Descrição
 
     ${usuarios}  Create List  Marlon Freitas  Gregory  Savarino
     ${notas}  Create List  5  4  3  2
-    ${descricao}  Create Dictionary  decricao=Geladeira Samsung 220v
+    ${descricao}  Create Dictionary  descricao=Geladeira Samsung 220v
 
     ${response}  Post JSONPlaceholder    
     ...    nome_produto=Geladeira
@@ -47,7 +47,7 @@ T4 - Post Placeholder sem o Preço do Produto
 
     ${usuarios}  Create List  John  Alex Telles  Vitinho
     ${notas}  Create List  5  4
-    ${descricao}  Create Dictionary  decricao=Geladeira Samsung 220v
+    ${descricao}  Create Dictionary  descricao=Geladeira Samsung 220v
 
     ${response}  Post JSONPlaceholder    
     ...    nome_produto=Microondas
